@@ -30,3 +30,9 @@ divide
 - Pressing = before entering all of the numbers or an operator could cause problems
 - Pressing "clear" should wipe out any existing data.. make sure the user is really starting fresh after pressing "clear"
 - Display a snarky error message if the user tries to divide by 0.. and don't let it crash your calculator
+
+Extra credit:
+- Users can get floating point numbers if they do tha math required to get one, but they can't type them in yet. Add a (.) button and let users input decimals. Make sure you don't let them type more than one!
+- Make it look nice! At least make the operations a different color from the keypad buttons
+- Add a "backspace" button, so the user can undo if they click the wrong number
+- Add keyboard support! You might run into an issue where keys such as (/) might cause you some trouble. Read the MDN doccumentation for event.preventDefault (https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) to help solve this problem
