@@ -1,6 +1,31 @@
+
 function add (a, b) {
-    let sum = a + b;
-    return sum;    
+    return a + b;    
 } 
 
-console.log(add(5, 4));
+function subtract (a, b) {
+    return a - b;
+}
+
+function multiply (a, b) {
+    return a * b;
+}
+
+function divide (a, b) {
+    return a / b;
+}
+
+
+function operate (operator, a, b) {
+    if (operator === "+" ) {
+        return add(a, b);
+    } if (operator === "-" ) {
+        return subtract(a, b)
+    } if (operator === "*" ) {
+        return multiply(a, b)
+    } if (operator === "/" ) {
+        return divide(a, b)
+    }
+};
+
+console.log(operate("/", 2, 3));
