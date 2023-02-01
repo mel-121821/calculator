@@ -1,0 +1,19 @@
+html {
+    position: relative;
+    min-height: 100%
+}
+
+div {
+    border: 1px solid grey;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+}
