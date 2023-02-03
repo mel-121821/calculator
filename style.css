@@ -3,8 +3,30 @@ html {
     min-height: 100%
 }
 
+body {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+
 div {
     border: 1px solid grey;
+}
+
+.calculator-body {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(233, 233, 233);
+}
+
+button {
+    padding: 12px 25px;
+    margin: 7px;
+    background-color:rgb(239, 161, 255);
+    font-size: 20px;
 }
 
 .footer {
