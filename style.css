@@ -20,6 +20,12 @@ div {
     display: flex;
     flex-direction: column;
     background-color: rgb(233, 233, 233);
+    border-radius: 8px;
+}
+
+#clear,
+#backspace {
+    margin: 7px 20px;
 }
 
 button {
@@ -27,7 +33,10 @@ button {
     margin: 7px;
     background-color:rgb(239, 161, 255);
     font-size: 20px;
+    border-radius: 8px;
 }
+
+
 
 .footer {
     position: absolute;
