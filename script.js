@@ -28,4 +28,6 @@ function operate (operator, a, b) {
     }
 };
 
+// An operator cannot be passed as a parameter to a  function, it must be passed as a string 
+
 console.log(operate("/", 2, 3));
