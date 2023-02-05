@@ -24,44 +24,67 @@ const userEntry = document.querySelector('.user-entry > p');
 const result = document.querySelector('.result > p')
 
 
+
+let displayValue = "";
+
 btn1.addEventListener('click', () => {
-    userEntry.textContent += 1;
+    displayValue += 1;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn2.addEventListener('click', () => {
-    userEntry.textContent += 2;
+    displayValue += 2;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn3.addEventListener('click', () => {
-    userEntry.textContent += 3;
+    displayValue += 3;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn4.addEventListener('click', () => {
-    userEntry.textContent += 4;
+    displayValue += 4;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn5.addEventListener('click', () => {
-    userEntry.textContent += 5;
+    displayValue += 5;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn6.addEventListener('click', () => {
-    userEntry.textContent += 6;
+    displayValue += 6;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn7.addEventListener('click', () => {
-    userEntry.textContent += 7;
+    displayValue += 7;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn8.addEventListener('click', () => {
-    userEntry.textContent += 8;
+    displayValue += 8;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn9.addEventListener('click', () => {
-    userEntry.textContent += 9;
+    displayValue += 9;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 btn0.addEventListener('click', () => {
-    userEntry.textContent += 0;
+    displayValue += 0;
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
 });
 
 
