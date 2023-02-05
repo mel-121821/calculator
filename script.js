@@ -20,6 +20,73 @@ const btnBackspace = document.querySelector('#backspace');
 const btnEquals = document.querySelector('#equals');
 const btnDecimal = document.querySelector('#decimal');
 
+const userEntry = document.querySelector('.user-entry > p');
+const result = document.querySelector('.result > p')
+
+
+btn1.addEventListener('click', () => {
+    userEntry.textContent += 1;
+});
+
+btn2.addEventListener('click', () => {
+    userEntry.textContent += 2;
+});
+
+btn3.addEventListener('click', () => {
+    userEntry.textContent += 3;
+});
+
+btn4.addEventListener('click', () => {
+    userEntry.textContent += 4;
+});
+
+btn5.addEventListener('click', () => {
+    userEntry.textContent += 5;
+});
+
+btn6.addEventListener('click', () => {
+    userEntry.textContent += 6;
+});
+
+btn7.addEventListener('click', () => {
+    userEntry.textContent += 7;
+});
+
+btn8.addEventListener('click', () => {
+    userEntry.textContent += 8;
+});
+
+btn9.addEventListener('click', () => {
+    userEntry.textContent += 9;
+});
+
+btn0.addEventListener('click', () => {
+    userEntry.textContent += 0;
+});
+
+
+
+btnAdd.addEventListener('click', () => {
+    userEntry.textContent += " + ";
+});
+
+btnSubtract.addEventListener('click', () => {
+    userEntry.textContent += " - ";
+});
+
+btnMultiply.addEventListener('click', () => {
+    userEntry.textContent += " x ";
+});
+
+btnDivide.addEventListener('click', () => {
+    userEntry.textContent += " ÷ ";
+});
+
+
+
+
+
+
 function add (a, b) {
     return a + b;    
 } 
