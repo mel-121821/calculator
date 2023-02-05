@@ -39,7 +39,13 @@ body {
 .result {
     display: flex;
     flex: 1 1 auto;
+    justify-content: end;
     /* flex auto tells the items to default to their given height, in this case, the given height is the hight of the display (90px) which is split evenly between the 2 items*/
+}
+
+p {
+    margin: 12px;
+    font-size: 20px;
 }
 
 #clear,
