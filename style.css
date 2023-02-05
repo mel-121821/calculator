@@ -11,16 +11,34 @@ body {
     justify-content: center;
 }
 
-div {
+/*div {
     border: 1px solid grey;
-}
+}*/
 
 .calculator-body {
     margin-top: 80px;
+    border: 2px solid grey;
     display: flex;
     flex-direction: column;
     background-color: rgb(233, 233, 233);
     border-radius: 8px;
+    align-items: stretch;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    min-height: 90px;
+    margin: 9px;
+    border-radius: 8px;
+    border: 2px solid grey;
+    background-color: white;
+}
+
+.user-entry,
+.result {
+    display: flex;
+    flex: 1 1 auto;
 }
 
 #clear,
