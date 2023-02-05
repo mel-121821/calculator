@@ -87,6 +87,18 @@ btn0.addEventListener('click', () => {
     console.log(displayValue)
 });
 
+btnDecimal.addEventListener('click', () => {
+    let displayValueArray = displayValue.split("")
+    if (displayValueArray.includes('.') === true) {
+        alert("What do you think you're doing?... Only one decimal per entry, dummy!");
+    } else {
+    console.log(displayValueArray);
+    displayValue += ".";
+    userEntry.textContent = displayValue;
+    console.log(displayValue)
+    };
+});
+
 
 
 btnAdd.addEventListener('click', () => {
@@ -103,6 +115,19 @@ btnMultiply.addEventListener('click', () => {
 
 btnDivide.addEventListener('click', () => {
     userEntry.textContent += " ÷ ";
+});
+
+
+btnBackspace.addEventListener('click', () => {
+    displayValue = displayValue.slice(0, -1)
+    userEntry.textContent = displayValue;
+    console.log(displayValue);
+});
+
+btnClear.addEventListener('click', () => {
+    displayValue = "";
+    userEntry.textContent = displayValue;
+    console.log(displayValue);
 });
 
 
