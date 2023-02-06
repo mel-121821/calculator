@@ -18,6 +18,7 @@ body {
 .calculator-body {
     margin-top: 80px;
     border: 2px solid grey;
+    padding: 3px;
     display: flex;
     flex-direction: column;
     background-color: rgb(233, 233, 233);
@@ -51,6 +52,15 @@ p {
 #clear,
 #backspace {
     margin: 7px 20px;
+    background-color: rgb(197, 130, 209);
+}
+
+.nums789-and-divide,
+.nums456-and-multiply,
+.nums123-and-subtract,
+.zero-and-other-operators {
+    display: flex;
+    justify-content: space-around;
 }
 
 button {
@@ -59,6 +69,13 @@ button {
     background-color:rgb(239, 161, 255);
     font-size: 20px;
     border-radius: 8px;
+}
+
+#add,
+#subtract,
+#multiply,
+#divide {
+    background-color: rgb(197, 130, 209);
 }
 
 
