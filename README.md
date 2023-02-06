@@ -36,3 +36,14 @@ Extra credit:
 - Make it look nice! At least make the operations a different color from the keypad buttons
 - Add a "backspace" button, so the user can undo if they click the wrong number
 - Add keyboard support! You might run into an issue where keys such as (/) might cause you some trouble. Read the MDN doccumentation for event.preventDefault (https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) to help solve this problem
+
+Resources:
+
+For backspace function:
+https://www.scaler.com/topics/remove-last-character-from-string-javascript/
+
+For function to prevent decimal repetition:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+
+
