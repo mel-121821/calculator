@@ -1,14 +1,16 @@
 
-const btn1 = document.querySelector('#one');
-const btn2 = document.querySelector('#two');
-const btn3 = document.querySelector('#three');
-const btn4 = document.querySelector('#four');
-const btn5 = document.querySelector('#five');
-const btn6 = document.querySelector('#six');
-const btn7 = document.querySelector('#seven');
-const btn8 = document.querySelector('#eight');
-const btn9 = document.querySelector('#nine');
-const btn0 = document.querySelector('#zero');
+//const btn1 = document.querySelector('#one');
+//const btn2 = document.querySelector('#two');
+//const btn3 = document.querySelector('#three');
+//const btn4 = document.querySelector('#four');
+//const btn5 = document.querySelector('#five');
+//const btn6 = document.querySelector('#six');
+//const btn7 = document.querySelector('#seven');
+//const btn8 = document.querySelector('#eight');
+//const btn9 = document.querySelector('#nine');
+//const btn0 = document.querySelector('#zero');
+
+const allNumBtns = document.querySelectorAll('.num');
 
 const btnAdd = document.querySelector('#add');
 const btnSubtract = document.querySelector('#subtract');
@@ -25,72 +27,23 @@ const result = document.querySelector('.result > p')
 
 
 
-let displayValue = "";
+let displayValue = [];
 
-btn1.addEventListener('click', () => {
-    displayValue += 1;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
+for (btn of allNumBtns) {
+    btn.addEventListener('click', function () {
+        console.log(this);
+        //displayValue.push(this);
+        //userEntry.textContent = displayValue.join("");
+    })
+}
 
-btn2.addEventListener('click', () => {
-    displayValue += 2;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
 
-btn3.addEventListener('click', () => {
-    displayValue += 3;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
 
-btn4.addEventListener('click', () => {
-    displayValue += 4;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
-
-btn5.addEventListener('click', () => {
-    displayValue += 5;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
-
-btn6.addEventListener('click', () => {
-    displayValue += 6;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
-
-btn7.addEventListener('click', () => {
-    displayValue += 7;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
-
-btn8.addEventListener('click', () => {
-    displayValue += 8;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
-
-btn9.addEventListener('click', () => {
-    displayValue += 9;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
-
-btn0.addEventListener('click', () => {
-    displayValue += 0;
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-});
 
 btnDecimal.addEventListener('click', () => {
     let displayValueArray = displayValue.split("")
     if (displayValueArray.includes('.') === true) {
-        alert("What do you think you're doing?... Only one decimal per entry, dummy!");
+        alert("Only one decimal per entry!");
     } else {
     console.log(displayValueArray);
     displayValue += ".";
@@ -102,7 +55,11 @@ btnDecimal.addEventListener('click', () => {
 
 
 btnAdd.addEventListener('click', () => {
-    userEntry.textContent += " + ";
+    getFirstDisplayValue()
+    console.log(displayValueA);
+    let dispValAOperator = `${displayValueA}  + `;
+    console.log(dispValAOperator);
+    userEntry.textContent = dispValAOperator;
 });
 
 btnSubtract.addEventListener('click', () => {
@@ -130,6 +87,18 @@ btnClear.addEventListener('click', () => {
     console.log(displayValue);
 });
 
+//btnAdd.addEventListener('click', () => {
+    //getFirstDisplayValue()
+    //console.log(displayValueA);
+
+//})
+
+let displayValueA;
+
+function getFirstDisplayValue() {
+    displayValueA = displayValue;
+    //return displayValueA;
+}
 
 
 
