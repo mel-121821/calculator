@@ -45,5 +45,7 @@ https://www.scaler.com/topics/remove-last-character-from-string-javascript/
 For function to prevent decimal repetition:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 
+Add event listener to multiple elements using a loop:
+https://www.codeinwp.com/snippets/add-event-listener-to-multiple-elements-with-javascript/#:~:text=(more%20details).-,Adding%20an%20Event%20Listener%20to%20Multiple%20Elements%20Using%20a%20for,loop%20back%20into%20the%20function.
 
 
