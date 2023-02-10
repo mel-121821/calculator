@@ -1,14 +1,4 @@
 
-//const btn1 = document.querySelector('#one');
-//const btn2 = document.querySelector('#two');
-//const btn3 = document.querySelector('#three');
-//const btn4 = document.querySelector('#four');
-//const btn5 = document.querySelector('#five');
-//const btn6 = document.querySelector('#six');
-//const btn7 = document.querySelector('#seven');
-//const btn8 = document.querySelector('#eight');
-//const btn9 = document.querySelector('#nine');
-//const btn0 = document.querySelector('#zero');
 
 const allNumBtns = document.querySelectorAll('.num');
 
@@ -31,9 +21,10 @@ let displayValue = [];
 
 for (btn of allNumBtns) {
     btn.addEventListener('click', function () {
-        console.log(this);
-        //displayValue.push(this);
-        //userEntry.textContent = displayValue.join("");
+        console.log(this.textContent);
+        displayValue.push(this.textContent);
+        console.log(displayValue);
+        userEntry.textContent = displayValue.join("");
     })
 }
 
@@ -41,15 +32,13 @@ for (btn of allNumBtns) {
 
 
 btnDecimal.addEventListener('click', () => {
-    let displayValueArray = displayValue.split("")
-    if (displayValueArray.includes('.') === true) {
+    if (displayValue.includes('.') === true) {
         alert("Only one decimal per entry!");
     } else {
-    console.log(displayValueArray);
-    displayValue += ".";
-    userEntry.textContent = displayValue;
-    console.log(displayValue)
-    };
+    displayValue.push('.');
+    console.log(displayValue);
+    userEntry.textContent = displayValue.join("")
+    }
 });
 
 
@@ -77,12 +66,12 @@ btnDivide.addEventListener('click', () => {
 
 btnBackspace.addEventListener('click', () => {
     displayValue = displayValue.slice(0, -1)
-    userEntry.textContent = displayValue;
+    userEntry.textContent = displayValue.join("");
     console.log(displayValue);
 });
 
 btnClear.addEventListener('click', () => {
-    displayValue = "";
+    displayValue = [];
     userEntry.textContent = displayValue;
     console.log(displayValue);
 });
