@@ -44,11 +44,10 @@ btnDecimal.addEventListener('click', () => {
 
 
 btnAdd.addEventListener('click', () => {
-    getFirstDisplayValue()
-    console.log(displayValueA);
-    let dispValAOperator = `${displayValueA}  + `;
-    console.log(dispValAOperator);
-    userEntry.textContent = dispValAOperator;
+    getFirstDisplayValue();
+    console.log(dispValA);
+    displayValue.push(' + ');
+    userEntry.textContent = displayValue.join("");
 });
 
 btnSubtract.addEventListener('click', () => {
@@ -82,11 +81,11 @@ btnClear.addEventListener('click', () => {
 
 //})
 
-let displayValueA;
+let dispValA = "";
 
 function getFirstDisplayValue() {
-    displayValueA = displayValue;
-    //return displayValueA;
+    dispValA = displayValue.join("");
+    return dispValA;
 }
 
 
