@@ -29,7 +29,7 @@ body {
 .display {
     display: flex;
     flex-direction: column;
-    min-height: 90px;
+    /*min-height: 90px;*/
     margin: 9px;
     border-radius: 8px;
     border: 2px solid grey;
@@ -41,6 +41,7 @@ body {
     display: flex;
     flex: 1 1 auto;
     justify-content: end;
+    min-height: 50px;
     /* flex auto tells the items to default to their given height, in this case, the given height is the hight of the display (90px) which is split evenly between the 2 items*/
 }
 
