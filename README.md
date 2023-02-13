@@ -48,4 +48,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 Add event listener to multiple elements using a loop:
 https://www.codeinwp.com/snippets/add-event-listener-to-multiple-elements-with-javascript/#:~:text=(more%20details).-,Adding%20an%20Event%20Listener%20to%20Multiple%20Elements%20Using%20a%20for,loop%20back%20into%20the%20function.
 
+Converting a string to a number:
+https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/#:~:text=(quantity))%3B-,How%20to%20convert%20a%20string%20to%20a%20number%20in%20JavaScript,will%20go%20before%20the%20operand.&text=We%20can%20also%20use%20the,into%20a%20floating%20point%20number.
 
