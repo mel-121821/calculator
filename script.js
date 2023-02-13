@@ -24,12 +24,12 @@ for (btn of allNumBtns) {
         console.log(this.textContent);
         displayValue.push(this.textContent);
         console.log(displayValue);
-        userEntry.textContent = displayValue.join("");
+        result.textContent = displayValue.join("");
     })
 }
 
 
-
+// will need to adjust this to accept a decimal for both user entries, not just one
 
 btnDecimal.addEventListener('click', () => {
     if (displayValue.includes('.') === true) {
@@ -37,7 +37,7 @@ btnDecimal.addEventListener('click', () => {
     } else {
     displayValue.push('.');
     console.log(displayValue);
-    userEntry.textContent = displayValue.join("")
+    result.textContent = displayValue.join("")
     }
 });
 
@@ -46,8 +46,11 @@ btnDecimal.addEventListener('click', () => {
 btnAdd.addEventListener('click', () => {
     getFirstDisplayValue();
     console.log(dispValA);
-    displayValue.push(' + ');
-    userEntry.textContent = displayValue.join("");
+    dispValA.push(' + ');
+    userEntry.textContent = dispValA.join("")
+    emptyDisplayValue();
+    console.log(displayValue);
+    result.textContent = displayValue;
 });
 
 btnSubtract.addEventListener('click', () => {
@@ -65,13 +68,14 @@ btnDivide.addEventListener('click', () => {
 
 btnBackspace.addEventListener('click', () => {
     displayValue = displayValue.slice(0, -1)
-    userEntry.textContent = displayValue.join("");
+    result.textContent = displayValue.join("");
     console.log(displayValue);
 });
 
 btnClear.addEventListener('click', () => {
     displayValue = [];
     userEntry.textContent = displayValue;
+    result.textContent = displayValue;
     console.log(displayValue);
 });
 
@@ -81,11 +85,16 @@ btnClear.addEventListener('click', () => {
 
 //})
 
-let dispValA = "";
+let dispValA = [];
 
 function getFirstDisplayValue() {
-    dispValA = displayValue.join("");
+    dispValA = displayValue;
     return dispValA;
+}
+
+function emptyDisplayValue() {
+    displayValue = [];
+    return displayValue;
 }
 
 
