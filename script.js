@@ -21,9 +21,9 @@ let displayValue = [];
 
 for (btn of allNumBtns) {
     btn.addEventListener('click', function () {
-        console.log(this.textContent);
+        //console.log(this.textContent);
         displayValue.push(this.textContent);
-        console.log(displayValue);
+        //console.log(displayValue);
         result.textContent = displayValue.join("");
     })
 }
@@ -42,11 +42,14 @@ btnDecimal.addEventListener('click', () => {
 });
 
 
+let operator = ""
 
 btnAdd.addEventListener('click', () => {
+    operator = " + ";
     getFirstDisplayValue();
     console.log(dispValA);
-    dispValA.push(' + ');
+    dispValA.push(operator);
+    console.log(dispValA);
     userEntry.textContent = dispValA.join("")
     emptyDisplayValue();
     console.log(displayValue);
