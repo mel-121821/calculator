@@ -45,40 +45,35 @@ btnDecimal.addEventListener('click', () => {
 let operator = ""
 
 btnAdd.addEventListener('click', () => {
-    operator = " + ";
+    operator = "+";
     getDispValA();
     console.log(dispValA);
-    dispValA.push(operator);
-    console.log(dispValA);
-    userEntry.textContent = dispValA.join("")
+    userEntry.textContent = `${dispValA.join("")} ${operator} `
     emptyDisplayValue();
     console.log(displayValue);
     result.textContent = displayValue;
 });
 
 btnSubtract.addEventListener('click', () => {
-    operator = " - ";
+    operator = "-";
     getDispValA();
-    dispValA.push(operator);
-    userEntry.textContent = dispValA.join("")
+    userEntry.textContent = `${dispValA.join("")} ${operator} `
     emptyDisplayValue();
     result.textContent = displayValue;
 });
 
 btnMultiply.addEventListener('click', () => {
-    operator = " x ";
+    operator = "x";
     getDispValA();
-    dispValA.push(operator);
-    userEntry.textContent = dispValA.join("")
+    userEntry.textContent = `${dispValA.join("")} ${operator} `
     emptyDisplayValue();
     result.textContent = displayValue;
 });
 
 btnDivide.addEventListener('click', () => {
-    operator = " ÷ ";
+    operator = "÷";
     getDispValA();
-    dispValA.push(operator);
-    userEntry.textContent = dispValA.join("")
+    userEntry.textContent = `${dispValA.join("")} ${operator} `
     emptyDisplayValue();
     result.textContent = displayValue;
 });
@@ -101,6 +96,7 @@ btnEquals.addEventListener('click', () => {
     console.log(dispValA);
     getDispValB();
     console.log(dispValB);
+    console.log(operator);
 })
 
 let dispValA = [];
