@@ -46,7 +46,7 @@ let operator = ""
 
 btnAdd.addEventListener('click', () => {
     operator = " + ";
-    getFirstDisplayValue();
+    getDispValA();
     console.log(dispValA);
     dispValA.push(operator);
     console.log(dispValA);
@@ -57,15 +57,30 @@ btnAdd.addEventListener('click', () => {
 });
 
 btnSubtract.addEventListener('click', () => {
-    userEntry.textContent += " - ";
+    operator = " - ";
+    getDispValA();
+    dispValA.push(operator);
+    userEntry.textContent = dispValA.join("")
+    emptyDisplayValue();
+    result.textContent = displayValue;
 });
 
 btnMultiply.addEventListener('click', () => {
-    userEntry.textContent += " x ";
+    operator = " x ";
+    getDispValA();
+    dispValA.push(operator);
+    userEntry.textContent = dispValA.join("")
+    emptyDisplayValue();
+    result.textContent = displayValue;
 });
 
 btnDivide.addEventListener('click', () => {
-    userEntry.textContent += " ÷ ";
+    operator = " ÷ ";
+    getDispValA();
+    dispValA.push(operator);
+    userEntry.textContent = dispValA.join("")
+    emptyDisplayValue();
+    result.textContent = displayValue;
 });
 
 
@@ -82,26 +97,30 @@ btnClear.addEventListener('click', () => {
     console.log(displayValue);
 });
 
-//btnAdd.addEventListener('click', () => {
-    //getFirstDisplayValue()
-    //console.log(displayValueA);
-
-//})
+btnEquals.addEventListener('click', () => {
+    console.log(dispValA);
+    getDispValB();
+    console.log(dispValB);
+})
 
 let dispValA = [];
+let dispValB = [];
 
-function getFirstDisplayValue() {
+
+function getDispValA () {
     dispValA = displayValue;
     return dispValA;
+}
+
+function getDispValB () {
+    dispValB = displayValue;
+    return dispValB;
 }
 
 function emptyDisplayValue() {
     displayValue = [];
     return displayValue;
 }
-
-
-
 
 
 function add (a, b) {
