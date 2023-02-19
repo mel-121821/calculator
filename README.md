@@ -51,3 +51,6 @@ https://www.codeinwp.com/snippets/add-event-listener-to-multiple-elements-with-j
 Converting a string to a number:
 https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/#:~:text=(quantity))%3B-,How%20to%20convert%20a%20string%20to%20a%20number%20in%20JavaScript,will%20go%20before%20the%20operand.&text=We%20can%20also%20use%20the,into%20a%20floating%20point%20number.
 
+JS Variable Scoping:
+https://2ality.com/2011/02/javascript-variable-scoping-and-its.html#:~:text=Scoping%20in%20JavaScript%20is%20static,function%20in%20the%20following%20code.
+
