@@ -44,6 +44,7 @@ btnAdd.addEventListener('click', () => {
     operator = "+";
     getDispValA();
     console.log(dispValA);
+    console.log(typeof(dispValA));
     userEntry.textContent = `${dispValA.join("")} ${operator} `
     emptyDisplayValue();
     console.log(displayValue);
@@ -102,6 +103,10 @@ btnEquals.addEventListener('click', () => {
     operate(operator, a, b);
     let mathResult = operate(operator, a, b);
     console.log(mathResult);
+    displayValue = [mathResult];
+    userEntry.textContent = displayValue;
+    dispValB = [];
+    result.textContent = dispValB;
 })
 
 // used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
@@ -147,9 +152,9 @@ function operate (operator, a, b) {
         return add(a, b);
     } if (operator === "-" ) {
         return subtract(a, b)
-    } if (operator === "*" ) {
+    } if (operator === "x" ) {
         return multiply(a, b)
-    } if (operator === "/" ) {
+    } if (operator === "÷" ) {
         return divide(a, b)
     }
 };
