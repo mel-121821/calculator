@@ -21,15 +21,11 @@ let displayValue = [];
 
 for (btn of allNumBtns) {
     btn.addEventListener('click', function () {
-        //console.log(this.textContent);
         displayValue.push(this.textContent);
-        //console.log(displayValue);
         result.textContent = displayValue.join("");
     })
 }
 
-
-// will need to adjust this to accept a decimal for both user entries, not just one
 
 btnDecimal.addEventListener('click', () => {
     if (displayValue.includes('.') === true) {
@@ -106,10 +102,9 @@ btnEquals.addEventListener('click', () => {
     operate(operator, a, b);
     let mathResult = operate(operator, a, b);
     console.log(mathResult);
-    
-    
-
 })
+
+// used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
 
 let dispValA = [];
 let dispValB = [];
@@ -130,57 +125,6 @@ function emptyDisplayValue() {
     return displayValue;
 }
 
-//function convertArrayToNumber(value) {
-    //console.log(value);
-    //console.log(typeof(value));
-    //value = value.join("");
-    //console.log(value);
-    //console.log(typeof(value));
-    //value = parseInt(value);
-    //console.log(value);
-    //console.log(typeof(value));
-    //return value;
-//}
-
-// Could not get the above function to work, possibly due to scoping issue? Second attempt below. See resource on variable scoping in README.md
-
-let array = [5, 2, 4]
-
-function convArrToNum (value) {
-    return {
-        joinArr: function() {
-            value = Array.from(value).join("");
-            value = parseInt(value);
-            return value;
-        },
-    }
-}
-
-//function convArrToNum (value) {
-    //value = Array.from(value).join("");
-    //console.log(value)
-   //value = parseInt(value);
-    //console.log(value)
-//};
-
-
-//convArrToNum(array);
-//console.log(array);
-
-    
-
-
-// used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
-
-
-let v = convArrToNum(array);
-console.log(v.joinArr());
-console.log(typeof((v.joinArr())));
-
-
-
-
-//console.log(convertArrayToNumber(array));
 
 function add (a, b) {
     return a + b;
@@ -198,23 +142,6 @@ function divide (a, b) {
     return a / b;
 }
 
-
-//function operate (operator, a, b) {
-    //return {
-        //mathResult: function() {
-            //if (operator === "+" ) {
-                //return add(a, b);
-            //} if (operator === "-" ) {
-                //return subtract(a, b)
-            //} if (operator === "*" ) {
-                //return multiply(a, b)
-            //} if (operator === "/" ) {
-                //return divide(a, b)
-            //}
-        //}
-    //}
-//};
-
 function operate (operator, a, b) {
     if (operator === "+" ) {
         return add(a, b);
@@ -229,6 +156,34 @@ function operate (operator, a, b) {
 
 // An operator cannot be passed as a parameter to a  function, it must be passed as a string 
 
-//let r = operate("+", 1, 9);
-//console.log(r.mathResult());
+
+
+
+
+
+//function convertArrayToNumber(value) {
+    //value = value.join("");
+    //value = parseInt(value);
+    //return value;
+//}
+
+// Could not get the above or below functions to work, possibly due to scoping issue? See resource on variable scoping in README.md. May use this technique when I understand it better.
+
+//let array = [5, 2, 4]
+
+//function convArrToNum (value) {
+    //return {
+        //joinArr: function() {
+            //value = Array.from(value).join("");
+            //value = parseInt(value);
+            //return value;
+        //},
+    //}
+//}
+
+//let v = convArrToNum(array);
+//console.log(v.joinArr());
+//console.log(typeof((v.joinArr())));
+
+
 
