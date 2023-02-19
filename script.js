@@ -97,6 +97,14 @@ btnEquals.addEventListener('click', () => {
     getDispValB();
     console.log(dispValB);
     console.log(operator);
+    let a = ConvArrToNum(dispValA);
+    console.log(a.joinArr());
+    console.log(typeof(a.joinArr()));
+    let b = ConvArrToNum(dispValB);
+    console.log(b.joinArr());
+    console.log(typeof(b.joinArr()));
+    
+
 })
 
 let dispValA = [];
@@ -118,6 +126,43 @@ function emptyDisplayValue() {
     return displayValue;
 }
 
+//function convertArrayToNumber(value) {
+    //console.log(value);
+    //console.log(typeof(value));
+    //value = value.join("");
+    //console.log(value);
+    //console.log(typeof(value));
+    //value = parseInt(value);
+    //console.log(value);
+    //console.log(typeof(value));
+    //return value;
+//}
+
+// Could not get the above function to work, possibly due to scoping issue? Second attempt below. See resource on variable scoping in README.md
+
+let array = [5, 2, 4]
+
+function ConvArrToNum (value) {
+    return {
+        joinArr: function() {
+            value = Array.from(value).join("");
+            value = parseInt(value);
+            return value;
+        },
+    }
+}
+
+// used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
+
+
+let v = ConvArrToNum(array);
+console.log(v.joinArr());
+console.log(typeof((v.joinArr())));
+
+
+
+
+//console.log(convertArrayToNumber(array));
 
 function add (a, b) {
     return a + b;    
