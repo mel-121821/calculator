@@ -54,3 +54,6 @@ https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascr
 JS Variable Scoping:
 https://2ality.com/2011/02/javascript-variable-scoping-and-its.html#:~:text=Scoping%20in%20JavaScript%20is%20static,function%20in%20the%20following%20code.
 
+Calling Array.join() on an object:
+https://bobbyhadz.com/blog/javascript-typeerror-join-is-not-a-function
+
