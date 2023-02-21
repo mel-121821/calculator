@@ -44,10 +44,8 @@ btnAdd.addEventListener('click', () => {
     operator = "+";
     getDispValA();
     console.log(dispValA);
-    console.log(typeof(dispValA));
     userEntry.textContent = `${dispValA.join("")} ${operator} `
     emptyDisplayValue();
-    console.log(displayValue);
     result.textContent = displayValue;
 });
 
@@ -91,17 +89,15 @@ btnClear.addEventListener('click', () => {
 
 btnEquals.addEventListener('click', () => {
     let a = Array.from(dispValA).join("");
-    a = parseInt(a);
-    console.log(a);
-    console.log(typeof(a));
+    a = parseFloat(a);
     getDispValB();
     let b = Array.from(dispValB).join("");
-    b = parseInt(b);
-    console.log(b);
-    console.log(typeof(b));
-    console.log(operator);
+    b = parseFloat(b);
     operate(operator, a, b);
+    console.log(a);
+    console.log(b);
     let mathResult = operate(operator, a, b);
+    mathResult = Math.round(mathResult * 100) / 100;
     console.log(mathResult);
     displayValue = [mathResult];
     userEntry.textContent = displayValue;
