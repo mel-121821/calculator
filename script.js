@@ -18,6 +18,9 @@ const result = document.querySelector('.result > p')
 
 
 let displayValue = [];
+let dispValA = [];
+let dispValB = [];
+let operator = ""
 
 for (btn of allNumBtns) {
     btn.addEventListener('click', function () {
@@ -38,13 +41,20 @@ btnDecimal.addEventListener('click', () => {
 });
 
 
-let operator = ""
+
 
 btnAdd.addEventListener('click', () => {
     operator = "+";
+    console.log(dispValA);
+    console.log(dispValA.length);
+    //if ((dispValA.length > 0) && displayValue.length > 0 )) {
+
+    //};
     getDispValA();
     console.log(dispValA);
     userEntry.textContent = `${dispValA.join("")} ${operator} `
+    dispValA.push(operator);
+    console.log(dispValA);
     emptyDisplayValue();
     result.textContent = displayValue;
 });
@@ -82,17 +92,23 @@ btnBackspace.addEventListener('click', () => {
 
 btnClear.addEventListener('click', () => {
     displayValue = [];
+    dispValA = [];
+    operator = "";
     userEntry.textContent = displayValue;
     result.textContent = displayValue;
     console.log(displayValue);
+    console.log(dispValA);
+    console.log(operator);
 });
 
 btnEquals.addEventListener('click', () => {
-    let a = Array.from(dispValA).join("");
-    a = parseFloat(a);
+    performOperation();
+})
+
+function performOperation () {
+    let a = parseFloat(Array.from(dispValA).join(""));
     getDispValB();
-    let b = Array.from(dispValB).join("");
-    b = parseFloat(b);
+    let b = parseFloat(Array.from(dispValB).join(""));
     operate(operator, a, b);
     console.log(a);
     console.log(b);
@@ -102,13 +118,14 @@ btnEquals.addEventListener('click', () => {
     displayValue = [mathResult];
     userEntry.textContent = displayValue;
     dispValB = [];
+    console.log(a);
+    console.log(b);
+    console.log(operator);
     result.textContent = dispValB;
-})
+}
 
 // used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
 
-let dispValA = [];
-let dispValB = [];
 
 
 function getDispValA () {
