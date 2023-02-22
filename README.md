@@ -60,3 +60,8 @@ https://bobbyhadz.com/blog/javascript-typeerror-join-is-not-a-function
 Pass-by-reference / Pass-by-value: 
 https://stackoverflow.com/questions/518000/is-javascript-a-pass-by-reference-or-pass-by-value-language/5314911#5314911
 
+Rounding:
+https://stackoverflow.com/questions/7342957/how-do-you-round-to-1-decimal-place-in-javascript
+
+https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
+
