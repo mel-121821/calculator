@@ -68,3 +68,10 @@ https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-p
 Check if an array is empty:
 https://www.freecodecamp.org/news/check-if-javascript-array-is-empty-or-not-with-length/#:~:text=To%20check%20if%20an%20array,0%20elements%20inside%20of%20it.
 
+e.target:
+https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+
+
+Rabbit hole links/ other useful info:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind
+
