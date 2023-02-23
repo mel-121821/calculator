@@ -43,8 +43,10 @@ btnDecimal.addEventListener('click', () => {
 
 
 
-btnAdd.addEventListener('click', () => {
-    operator = "+";
+btnAdd.addEventListener('click', (e) => {
+    operator = e.target.textContent;
+    console.log(operator);
+    console.log(typeof(operator));
     console.log(dispValA);
     console.log(dispValA.length);
     //if ((dispValA.length > 0) && displayValue.length > 0 )) {
@@ -113,7 +115,6 @@ function performOperation () {
     console.log(a);
     console.log(b);
     let mathResult = operate(operator, a, b);
-    //mathResult = Math.round(mathResult * 100) / 100;
     console.log(mathResult);
     displayValue = [mathResult];
     userEntry.textContent = displayValue;
@@ -162,9 +163,7 @@ function divide (a, b) {
 
 function operate (operator, a, b) {
     if (operator === "+" ) {
-        //return add(a, b);
         return Math.round((add(a, b)) * 100) / 100;
-        //Math.round(mathResult * 100) / 100;
     } if (operator === "-" ) {
         return Math.round((subtract(a, b)) * 100) / 100;
     } if (operator === "x" ) {
