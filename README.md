@@ -65,3 +65,6 @@ https://stackoverflow.com/questions/7342957/how-do-you-round-to-1-decimal-place-
 
 https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
 
+Check if an array is empty:
+https://www.freecodecamp.org/news/check-if-javascript-array-is-empty-or-not-with-length/#:~:text=To%20check%20if%20an%20array,0%20elements%20inside%20of%20it.
+
