@@ -113,7 +113,7 @@ function performOperation () {
     console.log(a);
     console.log(b);
     let mathResult = operate(operator, a, b);
-    mathResult = Math.round(mathResult * 100) / 100;
+    //mathResult = Math.round(mathResult * 100) / 100;
     console.log(mathResult);
     displayValue = [mathResult];
     userEntry.textContent = displayValue;
@@ -162,13 +162,15 @@ function divide (a, b) {
 
 function operate (operator, a, b) {
     if (operator === "+" ) {
-        return add(a, b);
+        //return add(a, b);
+        return Math.round((add(a, b)) * 100) / 100;
+        //Math.round(mathResult * 100) / 100;
     } if (operator === "-" ) {
-        return subtract(a, b)
+        return Math.round((subtract(a, b)) * 100) / 100;
     } if (operator === "x" ) {
-        return multiply(a, b)
+        return Math.round((multiply(a, b)) * 100) / 100;
     } if (operator === "÷" ) {
-        return divide(a, b)
+        return Math.round((divide(a, b)) * 100) / 100;
     }
 };
 
