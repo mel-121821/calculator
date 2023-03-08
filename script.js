@@ -44,21 +44,33 @@ btnDecimal.addEventListener('click', () => {
 
 
 btnAdd.addEventListener('click', (e) => {
+    console.log(dispValA);
+    if ((dispValA.length > 0) && (displayValue.length > 0 )) {
+        console.log("Both dispValA and displayValue constain a value");
+        performOperation();
+        getDispValA();
+        emptyDisplayValue();
+        operator = e.target.textContent;
+        console.log(operator);
+        userEntry.textContent = `${dispValA.join("")} ${operator}`
+        console.log(`dispValA is ${dispValA}`);
+        console.log(`displayValue is ${displayValue}`);
+        console.log(Array.isArray(dispValA));
+    } else {
     operator = e.target.textContent;
     console.log(operator);
     console.log(typeof(operator));
-    console.log(dispValA);
-    console.log(dispValA.length);
-    //if ((dispValA.length > 0) && displayValue.length > 0 )) {
-
-    //};
+    console.log(`displayValue is ${displayValue}`);
+    console.log(`dispValA is ${dispValA}`);
+    console.log(`dispValA length is ${dispValA.length}`);
     getDispValA();
-    console.log(dispValA);
-    userEntry.textContent = `${dispValA.join("")} ${operator} `
+    console.log(`dispValA is ${dispValA} (displayed)`);
+    userEntry.textContent = `${dispValA.join("")} ${operator}`
     dispValA.push(operator);
-    console.log(dispValA);
+    console.log(`dispValA is ${dispValA}`);
     emptyDisplayValue();
     result.textContent = displayValue;
+    }
 });
 
 btnSubtract.addEventListener('click', () => {
@@ -105,6 +117,7 @@ btnClear.addEventListener('click', () => {
 
 btnEquals.addEventListener('click', () => {
     performOperation();
+    console.log(`At the end of operation, displayValue = ${displayValue}, dispvalA = ${dispValA}, dispValB = ${dispValB} and operator = ${operator}`);
 })
 
 function performOperation () {
@@ -118,9 +131,8 @@ function performOperation () {
     console.log(mathResult);
     displayValue = [mathResult];
     userEntry.textContent = displayValue;
+    console.log(displayValue);
     dispValB = [];
-    console.log(a);
-    console.log(b);
     console.log(operator);
     result.textContent = dispValB;
 }
