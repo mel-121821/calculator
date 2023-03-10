@@ -68,6 +68,7 @@ btnAdd.addEventListener('click', (e) => {
     userEntry.textContent = `${dispValA.join("")} ${operator}`
     dispValA.push(operator);
     console.log(`dispValA is ${dispValA}`);
+    console.log(`displayValue is ${displayValue}`)
     emptyDisplayValue();
     result.textContent = displayValue;
     }
@@ -132,9 +133,11 @@ function performOperation () {
     displayValue = [mathResult];
     userEntry.textContent = displayValue;
     console.log(displayValue);
+    dispValA = [];
     dispValB = [];
     console.log(operator);
     result.textContent = dispValB;
+    console.log(`dispValA = ${dispValA}`)
 }
 
 // used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
@@ -143,6 +146,7 @@ function performOperation () {
 
 function getDispValA () {
     dispValA = displayValue;
+    displayValue = [];
     return dispValA;
 }
 
