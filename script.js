@@ -128,9 +128,13 @@ btnClear.addEventListener('click', () => {
 });
 
 btnEquals.addEventListener('click', () => {
+    if ((dispValA.length > 0) && (displayValue.length > 0 )) {
     performOperation();
     console.log(`At the end of operation, displayValue = ${displayValue}, dispvalA = ${dispValA}, dispValB = ${dispValB} and operator = ${operator}`);
-})
+    } else {
+        return null;
+    }
+});
 
 function performOperation () {
     let a = parseFloat(Array.from(dispValA).join(""));
