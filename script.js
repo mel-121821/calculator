@@ -32,7 +32,8 @@ for (btn of allNumBtns) {
 
 btnDecimal.addEventListener('click', () => {
     if (displayValue.includes('.') === true) {
-        alert("Only one decimal per entry!");
+        //alert("Only one decimal per entry!");
+        return null;
     } else {
     displayValue.push('.');
     console.log(displayValue);
@@ -44,124 +45,65 @@ btnDecimal.addEventListener('click', () => {
 
 
 btnAdd.addEventListener('click', (e) => {
-    console.log(dispValA);
     if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-        console.log("Both dispValA and displayValue constain a value");
         performOperation();
         getDispValA();
         emptyDisplayValue();
         operator = e.target.textContent;
-        console.log(operator);
         userEntry.textContent = `${dispValA.join("")} ${operator}`
-        console.log(`dispValA is ${dispValA}`);
-        console.log(`displayValue is ${displayValue}`);
-        console.log(Array.isArray(dispValA));
     } else {
     operator = e.target.textContent;
-    console.log(operator);
-    console.log(typeof(operator));
-    console.log(`displayValue is ${displayValue}`);
-    console.log(`dispValA is ${dispValA}`);
-    console.log(`dispValA length is ${dispValA.length}`);
     getDispValA();
-    console.log(`dispValA is ${dispValA} (displayed)`);
     userEntry.textContent = `${dispValA.join("")} ${operator}`
-    //dispValA.push(operator);
-    console.log(`dispValA is ${dispValA}`);
-    console.log(`displayValue is ${displayValue}`)
     emptyDisplayValue();
     result.textContent = displayValue;
     }
 });
 
 btnSubtract.addEventListener('click', (e) => {
-    console.log(dispValA);
     if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-        console.log("Both dispValA and displayValue constain a value");
         performOperation();
         getDispValA();
         emptyDisplayValue();
         operator = e.target.textContent;
-        console.log(operator);
         userEntry.textContent = `${dispValA.join("")} ${operator}`
-        console.log(`dispValA is ${dispValA}`);
-        console.log(`displayValue is ${displayValue}`);
-        console.log(Array.isArray(dispValA));
     } else {
     operator = e.target.textContent;
-    console.log(operator);
-    console.log(typeof(operator));
-    console.log(`displayValue is ${displayValue}`);
-    console.log(`dispValA is ${dispValA}`);
-    console.log(`dispValA length is ${dispValA.length}`);
     getDispValA();
-    console.log(`dispValA is ${dispValA} (displayed)`);
     userEntry.textContent = `${dispValA.join("")} ${operator}`
-    dispValA.push(operator);
-    console.log(`dispValA is ${dispValA}`);
-    console.log(`displayValue is ${displayValue}`)
     emptyDisplayValue();
     result.textContent = displayValue;
     }
 });
 
 btnMultiply.addEventListener('click', (e) => {
-    console.log(dispValA);
     if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-        console.log("Both dispValA and displayValue constain a value");
         performOperation();
         getDispValA();
         emptyDisplayValue();
         operator = e.target.textContent;
-        console.log(operator);
         userEntry.textContent = `${dispValA.join("")} ${operator}`
-        console.log(`dispValA is ${dispValA}`);
-        console.log(`displayValue is ${displayValue}`);
-        console.log(Array.isArray(dispValA));
     } else {
     operator = e.target.textContent;
-    console.log(operator);
-    console.log(typeof(operator));
-    console.log(`displayValue is ${displayValue}`);
-    console.log(`dispValA is ${dispValA}`);
-    console.log(`dispValA length is ${dispValA.length}`);
     getDispValA();
-    console.log(`dispValA is ${dispValA} (displayed)`);
     userEntry.textContent = `${dispValA.join("")} ${operator}`
-    dispValA.push(operator);
-    console.log(`dispValA is ${dispValA}`);
-    console.log(`displayValue is ${displayValue}`)
     emptyDisplayValue();
     result.textContent = displayValue;
     }
 });
 
 btnDivide.addEventListener('click', (e) => {
-    console.log(dispValA);
     if ((dispValA.length > 0) && (displayValue.length > 0 )) {
         console.log("Both dispValA and displayValue constain a value");
         performOperation();
         getDispValA();
         emptyDisplayValue();
         operator = e.target.textContent;
-        console.log(operator);
         userEntry.textContent = `${dispValA.join("")} ${operator}`
-        console.log(`dispValA is ${dispValA}`);
-        console.log(`displayValue is ${displayValue}`);
-        console.log(Array.isArray(dispValA));
     } else {
     operator = e.target.textContent;
-    console.log(operator);
-    console.log(typeof(operator));
-    console.log(`displayValue is ${displayValue}`);
-    console.log(`dispValA is ${dispValA}`);
-    console.log(`dispValA length is ${dispValA.length}`);
     getDispValA();
-    console.log(`dispValA is ${dispValA} (displayed)`);
     userEntry.textContent = `${dispValA.join("")} ${operator}`
-    dispValA.push(operator);
-    console.log(`dispValA is ${dispValA}`);
-    console.log(`displayValue is ${displayValue}`)
     emptyDisplayValue();
     result.textContent = displayValue;
     }
