@@ -25,7 +25,7 @@ divide
 
 (6) Watch out for these bugs if they show up in your code:
 - Users should be able to string together several operations and get the right answer, with each pair of numbers being evaluated at a time. For ex: 12 + 7 - 5 * 3 = should yield 42. Example link : https://mrbuddh4.github.io/calculator/
-- Your calculator should not ecaluate more than a single pair of numbers at a time 
+- Your calculator should not evaluate more than a single pair of numbers at a time 
 - You should round answers with long decimals so that they don't overflow the screen
 - Pressing = before entering all of the numbers or an operator could cause problems
 - Pressing "clear" should wipe out any existing data.. make sure the user is really starting fresh after pressing "clear"
