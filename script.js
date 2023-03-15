@@ -2,10 +2,12 @@
 
 const allNumBtns = document.querySelectorAll('.num');
 
-const btnAdd = document.querySelector('#add');
-const btnSubtract = document.querySelector('#subtract');
-const btnMultiply = document.querySelector('#multiply');
-const btnDivide = document.querySelector('#divide');
+const allOperatorBtns = document.querySelectorAll('.operator');
+
+//const btnAdd = document.querySelector('#add');
+//const btnSubtract = document.querySelector('#subtract');
+//const btnMultiply = document.querySelector('#multiply');
+//const btnDivide = document.querySelector('#divide');
 
 const btnClear = document.querySelector('#clear');
 const btnBackspace = document.querySelector('#backspace');
@@ -29,6 +31,24 @@ for (btn of allNumBtns) {
     })
 }
 
+for (btn of allOperatorBtns) {
+    btn.addEventListener('click', (e) => {
+        if ((dispValA.length > 0) && (displayValue.length > 0 )) {
+            performOperation();
+            getDispValA();
+            emptyDisplayValue();
+            operator = e.target.textContent;
+            userEntry.textContent = `${dispValA.join("")} ${operator}`
+        } else {
+        operator = e.target.textContent;
+        getDispValA();
+        userEntry.textContent = `${dispValA.join("")} ${operator}`
+        emptyDisplayValue();
+        result.textContent = displayValue;
+        }
+    });
+}
+
 
 btnDecimal.addEventListener('click', () => {
     if (displayValue.includes('.') === true) {
@@ -44,70 +64,70 @@ btnDecimal.addEventListener('click', () => {
 
 
 
-btnAdd.addEventListener('click', (e) => {
-    if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-        performOperation();
-        getDispValA();
-        emptyDisplayValue();
-        operator = e.target.textContent;
-        userEntry.textContent = `${dispValA.join("")} ${operator}`
-    } else {
-    operator = e.target.textContent;
-    getDispValA();
-    userEntry.textContent = `${dispValA.join("")} ${operator}`
-    emptyDisplayValue();
-    result.textContent = displayValue;
-    }
-});
+//btnAdd.addEventListener('click', (e) => {
+    //if ((dispValA.length > 0) && (displayValue.length > 0 )) {
+        //performOperation();
+        //getDispValA();
+        //emptyDisplayValue();
+        //operator = e.target.textContent;
+        //userEntry.textContent = `${dispValA.join("")} ${operator}`
+    //} else {
+    //operator = e.target.textContent;
+    //getDispValA();
+    //userEntry.textContent = `${dispValA.join("")} ${operator}`
+    //emptyDisplayValue();
+    //result.textContent = displayValue;
+    //}
+//});
 
-btnSubtract.addEventListener('click', (e) => {
-    if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-        performOperation();
-        getDispValA();
-        emptyDisplayValue();
-        operator = e.target.textContent;
-        userEntry.textContent = `${dispValA.join("")} ${operator}`
-    } else {
-    operator = e.target.textContent;
-    getDispValA();
-    userEntry.textContent = `${dispValA.join("")} ${operator}`
-    emptyDisplayValue();
-    result.textContent = displayValue;
-    }
-});
+//btnSubtract.addEventListener('click', (e) => {
+    //if ((dispValA.length > 0) && (displayValue.length > 0 )) {
+        //performOperation();
+        //getDispValA();
+        //emptyDisplayValue();
+        //operator = e.target.textContent;
+        //userEntry.textContent = `${dispValA.join("")} ${operator}`
+    //} else {
+    //operator = e.target.textContent;
+    //getDispValA();
+    //userEntry.textContent = `${dispValA.join("")} ${operator}`
+    //emptyDisplayValue();
+    //result.textContent = displayValue;
+    //}
+//});
 
-btnMultiply.addEventListener('click', (e) => {
-    if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-        performOperation();
-        getDispValA();
-        emptyDisplayValue();
-        operator = e.target.textContent;
-        userEntry.textContent = `${dispValA.join("")} ${operator}`
-    } else {
-    operator = e.target.textContent;
-    getDispValA();
-    userEntry.textContent = `${dispValA.join("")} ${operator}`
-    emptyDisplayValue();
-    result.textContent = displayValue;
-    }
-});
+//btnMultiply.addEventListener('click', (e) => {
+    //if ((dispValA.length > 0) && (displayValue.length > 0 )) {
+        //performOperation();
+        //getDispValA();
+        //emptyDisplayValue();
+        //operator = e.target.textContent;
+        //userEntry.textContent = `${dispValA.join("")} ${operator}`
+    //} else {
+    //operator = e.target.textContent;
+    //getDispValA();
+    //userEntry.textContent = `${dispValA.join("")} ${operator}`
+    //emptyDisplayValue();
+    //result.textContent = displayValue;
+    //}
+//});
 
-btnDivide.addEventListener('click', (e) => {
-    if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-        console.log("Both dispValA and displayValue constain a value");
-        performOperation();
-        getDispValA();
-        emptyDisplayValue();
-        operator = e.target.textContent;
-        userEntry.textContent = `${dispValA.join("")} ${operator}`
-    } else {
-    operator = e.target.textContent;
-    getDispValA();
-    userEntry.textContent = `${dispValA.join("")} ${operator}`
-    emptyDisplayValue();
-    result.textContent = displayValue;
-    }
-});
+//btnDivide.addEventListener('click', (e) => {
+    //if ((dispValA.length > 0) && (displayValue.length > 0 )) {
+        //console.log("Both dispValA and displayValue constain a value");
+        //performOperation();
+        //getDispValA();
+        //emptyDisplayValue();
+        //operator = e.target.textContent;
+        //userEntry.textContent = `${dispValA.join("")} $//{operator}`
+    //} else {
+    //operator = e.target.textContent;
+    //getDispValA();
+    //userEntry.textContent = `${dispValA.join("")} ${operator}`
+    //emptyDisplayValue();
+    //result.textContent = displayValue;
+    //}
+//});
 
 
 btnBackspace.addEventListener('click', () => {
@@ -128,8 +148,14 @@ btnClear.addEventListener('click', () => {
 });
 
 btnEquals.addEventListener('click', () => {
+    console.log(`
+        displayValue = ${displayValue},
+        dispValA = ${dispValA}
+        dispValB = ${dispValB}
+        operator = ${operator}`)
     if ((dispValA.length > 0) && (displayValue.length > 0 )) {
     performOperation();
+    userEntry.textContent = `${dispValA} ${operator} ${displayValue}`;
     console.log(`At the end of operation, displayValue = ${displayValue}, dispvalA = ${dispValA}, dispValB = ${dispValB} and operator = ${operator}`);
     } else {
         return null;
