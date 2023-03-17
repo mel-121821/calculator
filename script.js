@@ -30,13 +30,13 @@ for (btn of allOperatorBtns) {
     btn.addEventListener('click', (e) => {
         if ((dispValA.length > 0) && (displayValue.length > 0 )) {
             performOperation();
-            getDispValA();
+            //getDispValA();
             emptyDisplayValue();
             operator = e.target.textContent;
             userEntry.textContent = `${dispValA.join("")} ${operator}`
         } else {
         operator = e.target.textContent;
-        getDispValA();
+        //getDispValA();
         userEntry.textContent = `${dispValA.join("")} ${operator}`
         emptyDisplayValue();
         result.textContent = displayValue;
@@ -68,6 +68,11 @@ btnClear.addEventListener('click', () => {
 });
 
 btnEquals.addEventListener('click', () => {
+    console.log(`before btnEquals function runs:
+    displayValue = ${displayValue}
+    dispValA = ${dispValA}
+    dispValB = ${dispValB}
+    operator = ${operator}`);
     if ((dispValA.length > 0) && (displayValue.length > 0 )) {
     performOperation();
     userEntry.textContent = `${dispValA} ${operator} ${displayValue}`;
@@ -82,12 +87,20 @@ function performOperation () {
     let b = parseFloat(Array.from(dispValB).join(""));
     operate(operator, a, b);
     let mathResult = operate(operator, a, b);
-    displayValue = [mathResult];
-    userEntry.textContent = displayValue;
-    dispValA = [];
+    //displayValue = [mathResult];
+    dispValA = [mathResult];
+    //userEntry.textContent = displayValue;
+    userEntry.textContent = dispValA;
+    //dispValA = [];
+    displayValue = [];
     dispValB = [];
     operator = "";
     result.textContent = dispValB;
+    console.log(`After performOperation:
+    displayValue = ${displayValue}
+    dispValA = ${dispValA}
+    dispValB = ${dispValB}
+    operator = ${operator}`);
 }
 
 // used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
