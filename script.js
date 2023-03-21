@@ -29,14 +29,35 @@ for (btn of allNumBtns) {
 for (btn of allOperatorBtns) {
     btn.addEventListener('click', (e) => {
         if ((dispValA.length > 0) && (displayValue.length > 0 )) {
+            //Check if dispValA already exists, if yes, use that, if no getDispValA from displayValue
+            console.log(`allOperatorBtns(2) before operation:
+            displayvalue = ${displayValue}
+            dispValA = ${dispValA}`)
             performOperation();
+            console.log(`allOperatorBtns(2) after operation:
+            displayvalue = ${displayValue}
+            dispValA = ${dispValA}`)
             //getDispValA();
             emptyDisplayValue();
             operator = e.target.textContent;
             userEntry.textContent = `${dispValA.join("")} ${operator}`
+        } if ((dispValA.length > 0) && (displayValue.length === 0)) {
+            console.log(`allOperatorBtns(3):
+            displayvalue = ${displayValue}
+            dispValA = ${dispValA}
+            operator = ${operator}`)
+            operator = e.target.textContent;
+            //getDispValA();
+            userEntry.textContent = `${dispValA.join("")} ${operator}`
+            //emptyDisplayValue();
+            result.textContent = displayValue;
         } else {
+        console.log(`allOperatorBtns(1):
+        displayvalue = ${displayValue}
+        dispValA = ${dispValA}
+        operator = ${operator}`)
         operator = e.target.textContent;
-        //getDispValA();
+        getDispValA();
         userEntry.textContent = `${dispValA.join("")} ${operator}`
         emptyDisplayValue();
         result.textContent = displayValue;
@@ -75,7 +96,7 @@ btnEquals.addEventListener('click', () => {
     operator = ${operator}`);
     if ((dispValA.length > 0) && (displayValue.length > 0 )) {
     performOperation();
-    userEntry.textContent = `${dispValA} ${operator} ${displayValue}`;
+    userEntry.textContent = `${dispValA}`;
     } else {
         return null;
     }
@@ -94,7 +115,7 @@ function performOperation () {
     //dispValA = [];
     displayValue = [];
     dispValB = [];
-    operator = "";
+    //operator = "";
     result.textContent = dispValB;
     console.log(`After performOperation:
     displayValue = ${displayValue}
