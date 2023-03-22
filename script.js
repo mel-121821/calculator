@@ -26,21 +26,39 @@ for (btn of allNumBtns) {
     })
 }
 
+// if user tries to press btnequals with no operator, an alert pops up and values are emptied, however if user tries to press an operator with 2 numbers and no existing operator, the operator will populate the screen and nothing else. Add a new if statement under the first if statement in allOperatorBtns to check if operator exists, if not, create another alert and clear values
+
 for (btn of allOperatorBtns) {
     btn.addEventListener('click', (e) => {
         if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-            //Check if dispValA already exists, if yes, use that, if no getDispValA from displayValue
-            console.log(`allOperatorBtns(2) before operation:
-            displayvalue = ${displayValue}
-            dispValA = ${dispValA}`)
-            performOperation();
-            console.log(`allOperatorBtns(2) after operation:
-            displayvalue = ${displayValue}
-            dispValA = ${dispValA}`)
-            //getDispValA();
-            emptyDisplayValue();
-            operator = e.target.textContent;
-            userEntry.textContent = `${dispValA.join("")} ${operator}`
+            if (operator === "") {
+                console.log(`btnAdd if statement(2):
+                operator = ${operator}`);
+                alert("Please enter an operator");
+                displayValue = [];
+                dispValA = [];
+                operator = "";
+                userEntry.textContent = displayValue;
+                result.textContent = displayValue;
+                console.log(`btnAdd if statement (post execution):
+                displayValue = ${displayValue}
+                dispValA = ${dispValA}
+                dispValB = ${dispValB}
+                operator = ${operator}`);
+            } else {
+                //Check if dispValA already exists, if yes, use that, if no getDispValA from displayValue
+                console.log(`allOperatorBtns(2) before operation:
+                displayvalue = ${displayValue}
+                dispValA = ${dispValA}`)
+                performOperation();
+                console.log(`allOperatorBtns(2) after operation:
+                displayvalue = ${displayValue}
+                dispValA = ${dispValA}`)
+                //getDispValA();
+                emptyDisplayValue();
+                operator = e.target.textContent;
+                userEntry.textContent = `${dispValA.join("")} ${operator}`
+            }
         } if ((dispValA.length > 0) && (displayValue.length === 0)) {
             console.log(`allOperatorBtns(3):
             displayvalue = ${displayValue}
@@ -96,13 +114,30 @@ btnEquals.addEventListener('click', () => {
     operator = ${operator}`);
     if ((dispValA.length > 0) && (displayValue.length > 0 )) {
     performOperation();
-    userEntry.textContent = `${dispValA}`;
+    //userEntry.textContent = `${dispValA}`;
     } else {
         return null;
     }
 });
 
+
+
 function performOperation () {
+    if (operator === "") {
+        console.log(`performOperation if statement:
+        operator = ${operator}`);
+        alert("Please enter an operator");
+        displayValue = [];
+        dispValA = [];
+        operator = "";
+        userEntry.textContent = displayValue;
+        result.textContent = displayValue;
+        console.log(`performOperation if statement (post execution):
+        displayValue = ${displayValue}
+        dispValA = ${dispValA}
+        dispValB = ${dispValB}
+        operator = ${operator}`);
+    } else {
     let a = parseFloat(Array.from(dispValA).join(""));
     getDispValB();
     let b = parseFloat(Array.from(dispValB).join(""));
@@ -115,14 +150,14 @@ function performOperation () {
     //dispValA = [];
     displayValue = [];
     dispValB = [];
-    //operator = "";
+    operator = "";
     result.textContent = dispValB;
     console.log(`After performOperation:
     displayValue = ${displayValue}
     dispValA = ${dispValA}
     dispValB = ${dispValB}
     operator = ${operator}`);
-}
+    }}
 
 // used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
 
