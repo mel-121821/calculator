@@ -75,3 +75,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/Event/target
 Rabbit hole links/ other useful info:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind
 
+Breaking out of an if statement:
+https://stackoverflow.com/questions/4851657/call-break-in-nested-if-statements#:~:text=If%20you%20label%20the%20if%20statement%20you%20can%20use%20break.&text=You%20can%20even%20label%20and%20break%20plain%20blocks.
+
+Switch statements:
+https://www.w3schools.com/js/js_switch.asp
+
