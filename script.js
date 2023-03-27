@@ -28,37 +28,37 @@ for (btn of allNumBtns) {
 
 // if user tries to press btnequals with no operator, an alert pops up and values are emptied, however if user tries to press an operator with 2 numbers and no existing operator, the operator will populate the screen and nothing else. Add a new if statement under the first if statement in allOperatorBtns to check if operator exists, if not, create another alert and clear values
 
+// nested if statement not working (final else statement runs after execution of nested if statement and adds an unwanted operator). See Readme for resources, may switch to switch statement??
+
 for (btn of allOperatorBtns) {
     btn.addEventListener('click', (e) => {
-        if ((dispValA.length > 0) && (displayValue.length > 0 )) {
-            if (operator === "") {
-                console.log(`btnAdd if statement(2):
-                operator = ${operator}`);
-                alert("Please enter an operator");
-                displayValue = [];
-                dispValA = [];
-                operator = "";
-                userEntry.textContent = displayValue;
-                result.textContent = displayValue;
-                console.log(`btnAdd if statement (post execution):
-                displayValue = ${displayValue}
-                dispValA = ${dispValA}
-                dispValB = ${dispValB}
-                operator = ${operator}`);
-            } else {
-                //Check if dispValA already exists, if yes, use that, if no getDispValA from displayValue
-                console.log(`allOperatorBtns(2) before operation:
-                displayvalue = ${displayValue}
-                dispValA = ${dispValA}`)
-                performOperation();
-                console.log(`allOperatorBtns(2) after operation:
-                displayvalue = ${displayValue}
-                dispValA = ${dispValA}`)
-                //getDispValA();
-                emptyDisplayValue();
-                operator = e.target.textContent;
-                userEntry.textContent = `${dispValA.join("")} ${operator}`
-            }
+        if ((dispValA.length > 0) && (displayValue.length > 0 ) && (operator.length > 0)) {
+            //Check if dispValA already exists, if yes, use that, if no getDispValA from displayValue
+            console.log(`allOperatorBtns(2) before operation:
+            displayvalue = ${displayValue}
+            dispValA = ${dispValA}`)
+            performOperation();
+            console.log(`allOperatorBtns(2) after operation:
+            displayvalue = ${displayValue}
+            dispValA = ${dispValA}`)
+            //getDispValA();
+            emptyDisplayValue();
+            operator = e.target.textContent;
+            userEntry.textContent = `${dispValA.join("")} ${operator}`
+        } if ((dispValA.length > 0) && (displayValue.length > 0 ) && (operator === "")) {
+            console.log(`btnAdd if statement(2):
+            operator = ${operator}`);
+            alert("Please enter an operator");
+            displayValue = [];
+            dispValA = [];
+            operator = "";
+            userEntry.textContent = displayValue;
+            result.textContent = displayValue;
+            console.log(`btnAdd if statement (post execution):
+            displayValue = ${displayValue}
+            dispValA = ${dispValA}
+            dispValB = ${dispValB}
+            operator = ${operator}`);        
         } if ((dispValA.length > 0) && (displayValue.length === 0)) {
             console.log(`allOperatorBtns(3):
             displayvalue = ${displayValue}
@@ -69,7 +69,7 @@ for (btn of allOperatorBtns) {
             userEntry.textContent = `${dispValA.join("")} ${operator}`
             //emptyDisplayValue();
             result.textContent = displayValue;
-        } else {
+        } if ((dispValA.length === 0) && (displayValue.length > 0)) {
         console.log(`allOperatorBtns(1):
         displayvalue = ${displayValue}
         dispValA = ${dispValA}
@@ -79,6 +79,7 @@ for (btn of allOperatorBtns) {
         userEntry.textContent = `${dispValA.join("")} ${operator}`
         emptyDisplayValue();
         result.textContent = displayValue;
+        console.log(`operator = ${operator}`)
         }
     });
 }
