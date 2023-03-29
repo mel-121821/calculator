@@ -26,11 +26,6 @@ for (btn of allNumBtns) {
     })
 }
 
-// if user tries to press btnequals with no operator, an alert pops up and values are emptied, however if user tries to press an operator with 2 numbers and no existing operator, the operator will populate the screen and nothing else. Add a new if statement under the first if statement in allOperatorBtns to check if operator exists, if not, create another alert and clear values
-
-// nested if statement not working (final else statement runs after execution of nested if statement and adds an unwanted operator). See Readme for resources, may switch to switch statement??
-
-//Solution: Added a condition to else statement to prevent code from running after alert message was clicked
 
 for (btn of allOperatorBtns) {
     btn.addEventListener('click', (e) => {
@@ -42,19 +37,18 @@ for (btn of allOperatorBtns) {
         } if ((dispValA.length > 0) && (displayValue.length > 0 ) && (operator === "")) {
             alert("Please enter an operator");
             clearValues();
-            userEntry.textContent = displayValue;
-            result.textContent = displayValue;       
+            clearDisplay();       
         } if ((dispValA.length > 0) && (displayValue.length === 0)) {
             operator = e.target.textContent;
             userEntry.textContent = `${dispValA.join("")} ${operator}`
-            result.textContent = displayValue;
+            result.textContent = "";
         } if ((dispValA.length === 0) && (displayValue.length > 0)) {
             operator = e.target.textContent;
             getDispValA();
             userEntry.textContent = `${dispValA.join("")} ${operator}`
             emptyDisplayValue();
             result.textContent = displayValue;
-        }  // Removed else statement because it would run after alert box is clicked
+        }
     });
 }
 
@@ -75,8 +69,7 @@ btnBackspace.addEventListener('click', () => {
 
 btnClear.addEventListener('click', () => {
     clearValues();
-    userEntry.textContent = displayValue;
-    result.textContent = displayValue;
+    clearDisplay();
 });
 
 btnEquals.addEventListener('click', () => {
@@ -93,31 +86,15 @@ function performOperation () {
     if (operator === "") {
         alert("Please enter an operator");
         clearValues();
-        userEntry.textContent = displayValue;
-        result.textContent = displayValue;
-    } //if (Array.from(displayValue).join("") === 0 && operator === "÷" ) {
-        //console.log(`At performOperation:
-        //displayValue = ${displayValue}
-        //dispValA = ${dispValA}
-        //operator = ${operator}`)
-        //alert("You cannont divide by zero! Try again.")
-        //clearValues();
-    //} 
-    else {
-        console.log("else statement is running")
-        console.log(typeof(displayValue));
-        console.log(`At performOperation:
-        displayValue = ${displayValue}
-        dispValA = ${dispValA}
-        operator = ${operator}`)
+        clearDisplay();
+    } else {
         let a = parseFloat(Array.from(dispValA).join(""));
         getDispValB();
         let b = parseFloat(Array.from(dispValB).join(""));
         if ((a === 0 || b === 0) && operator === "÷") {
             alert("You cannont divide by zero! Try again.")
             clearValues();
-            userEntry.textContent = dispValA;
-            result.textContent = displayValue;
+            clearDisplay();
         } else {
             let mathResult = operate(operator, a, b);
             dispValA = [mathResult];
@@ -125,11 +102,9 @@ function performOperation () {
             displayValue = [];
             dispValB = [];
             operator = "";
-            result.textContent = dispValB;
+            result.textContent = "";
         }
     }}
-
-// used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
 
 
 
@@ -153,6 +128,11 @@ function clearValues() {
     displayValue = [];
     dispValA = [];
     operator = "";
+}
+
+function clearDisplay() {
+    userEntry.textContent = "";
+    result.textContent = "";  
 }
 
 
