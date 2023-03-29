@@ -41,9 +41,7 @@ for (btn of allOperatorBtns) {
             userEntry.textContent = `${dispValA.join("")} ${operator}`
         } if ((dispValA.length > 0) && (displayValue.length > 0 ) && (operator === "")) {
             alert("Please enter an operator");
-            displayValue = [];
-            dispValA = [];
-            operator = "";
+            clearValues();
             userEntry.textContent = displayValue;
             result.textContent = displayValue;       
         } if ((dispValA.length > 0) && (displayValue.length === 0)) {
@@ -56,7 +54,7 @@ for (btn of allOperatorBtns) {
             userEntry.textContent = `${dispValA.join("")} ${operator}`
             emptyDisplayValue();
             result.textContent = displayValue;
-        } // Removed else statement because it would run after alert box is clicked
+        }  // Removed else statement because it would run after alert box is clicked
     });
 }
 
@@ -76,9 +74,7 @@ btnBackspace.addEventListener('click', () => {
 });
 
 btnClear.addEventListener('click', () => {
-    displayValue = [];
-    dispValA = [];
-    operator = "";
+    clearValues();
     userEntry.textContent = displayValue;
     result.textContent = displayValue;
 });
@@ -96,23 +92,41 @@ btnEquals.addEventListener('click', () => {
 function performOperation () {
     if (operator === "") {
         alert("Please enter an operator");
-        displayValue = [];
-        dispValA = [];
-        operator = "";
+        clearValues();
         userEntry.textContent = displayValue;
         result.textContent = displayValue;
-    } else {
+    } //if (Array.from(displayValue).join("") === 0 && operator === "÷" ) {
+        //console.log(`At performOperation:
+        //displayValue = ${displayValue}
+        //dispValA = ${dispValA}
+        //operator = ${operator}`)
+        //alert("You cannont divide by zero! Try again.")
+        //clearValues();
+    //} 
+    else {
+        console.log("else statement is running")
+        console.log(typeof(displayValue));
+        console.log(`At performOperation:
+        displayValue = ${displayValue}
+        dispValA = ${dispValA}
+        operator = ${operator}`)
         let a = parseFloat(Array.from(dispValA).join(""));
         getDispValB();
         let b = parseFloat(Array.from(dispValB).join(""));
-        operate(operator, a, b);
-        let mathResult = operate(operator, a, b);
-        dispValA = [mathResult];
-        userEntry.textContent = dispValA;
-        displayValue = [];
-        dispValB = [];
-        operator = "";
-        result.textContent = dispValB;
+        if ((a === 0 || b === 0) && operator === "÷") {
+            alert("You cannont divide by zero! Try again.")
+            clearValues();
+            userEntry.textContent = dispValA;
+            result.textContent = displayValue;
+        } else {
+            let mathResult = operate(operator, a, b);
+            dispValA = [mathResult];
+            userEntry.textContent = dispValA;
+            displayValue = [];
+            dispValB = [];
+            operator = "";
+            result.textContent = dispValB;
+        }
     }}
 
 // used the Array.from method to convert value to an array, as it was considered by the computer as an object, not an array
@@ -133,6 +147,12 @@ function getDispValB () {
 function emptyDisplayValue() {
     displayValue = [];
     return displayValue;
+}
+
+function clearValues() {
+    displayValue = [];
+    dispValA = [];
+    operator = "";
 }
 
 
