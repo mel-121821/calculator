@@ -19,13 +19,13 @@ let dispValA = [];
 let dispValB = [];
 let operator = ""
 
+
 for (btn of allNumBtns) {
     btn.addEventListener('click', function () {
         displayValue.push(this.textContent);
         result.textContent = displayValue.join("");
     })
 }
-
 
 for (btn of allOperatorBtns) {
     btn.addEventListener('click', (e) => {
@@ -51,7 +51,6 @@ for (btn of allOperatorBtns) {
         }
     });
 }
-
 
 btnDecimal.addEventListener('click', () => {
     if (displayValue.includes('.') === true) {
@@ -164,5 +163,4 @@ function operate (operator, a, b) {
     }
 };
 
-// An operator cannot be passed as a parameter to a  function, it must be passed as a string 
 
