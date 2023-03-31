@@ -9,8 +9,8 @@ const btnBackspace = document.querySelector('#backspace');
 const btnEquals = document.querySelector('#equals');
 const btnDecimal = document.querySelector('#decimal');
 
-const userEntry = document.querySelector('.user-entry > p');
-const result = document.querySelector('.result > p')
+const upperDisplay = document.querySelector('.upper-display > p');
+const lowerDisplay = document.querySelector('.lower-display > p')
 
 
 
@@ -23,7 +23,7 @@ let operator = ""
 for (btn of allNumBtns) {
     btn.addEventListener('click', function () {
         displayValue.push(this.textContent);
-        result.textContent = displayValue.join("");
+        lowerDisplay.textContent = displayValue.join("");
     })
 }
 
@@ -33,21 +33,21 @@ for (btn of allOperatorBtns) {
             performOperation();
             emptyDisplayValue();
             operator = e.target.textContent;
-            userEntry.textContent = `${dispValA.join("")} ${operator}`
+            upperDisplay.textContent = `${dispValA.join("")} ${operator}`
         } if ((dispValA.length > 0) && (displayValue.length > 0 ) && (operator === "")) {
             alert("Please enter an operator");
             clearValues();
             clearDisplay();       
         } if ((dispValA.length > 0) && (displayValue.length === 0)) {
             operator = e.target.textContent;
-            userEntry.textContent = `${dispValA.join("")} ${operator}`
-            result.textContent = "";
+            upperDisplay.textContent = `${dispValA.join("")} ${operator}`
+            lowerDisplay.textContent = "";
         } if ((dispValA.length === 0) && (displayValue.length > 0)) {
             operator = e.target.textContent;
             getDispValA();
-            userEntry.textContent = `${dispValA.join("")} ${operator}`
+            upperDisplay.textContent = `${dispValA.join("")} ${operator}`
             emptyDisplayValue();
-            result.textContent = displayValue;
+            lowerDisplay.textContent = displayValue;
         }
     });
 }
@@ -57,13 +57,13 @@ btnDecimal.addEventListener('click', () => {
         return null;
     } else {
     displayValue.push('.');
-    result.textContent = displayValue.join("")
+    lowerDisplay.textContent = displayValue.join("")
     }
 });
 
 btnBackspace.addEventListener('click', () => {
     displayValue = displayValue.slice(0, -1)
-    result.textContent = displayValue.join("");
+    lowerDisplay.textContent = displayValue.join("");
 });
 
 btnClear.addEventListener('click', () => {
@@ -97,11 +97,11 @@ function performOperation () {
         } else {
             let mathResult = operate(operator, a, b);
             dispValA = [mathResult];
-            userEntry.textContent = dispValA;
+            upperDisplay.textContent = dispValA;
             displayValue = [];
             dispValB = [];
             operator = "";
-            result.textContent = "";
+            lowerDisplay.textContent = "";
         }
     }}
 
@@ -130,8 +130,8 @@ function clearValues() {
 }
 
 function clearDisplay() {
-    userEntry.textContent = "";
-    result.textContent = "";  
+    upperDisplay.textContent = "";
+    lowerDisplay.textContent = "";  
 }
 
 
