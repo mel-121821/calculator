@@ -36,8 +36,8 @@ body {
     background-color: white;
 }
 
-.user-entry,
-.result {
+.upper-display,
+.lower-display {
     display: flex;
     flex: 1 1 auto;
     justify-content: end;
