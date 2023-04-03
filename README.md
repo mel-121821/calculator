@@ -81,3 +81,6 @@ https://stackoverflow.com/questions/4851657/call-break-in-nested-if-statements#:
 Switch statements:
 https://www.w3schools.com/js/js_switch.asp
 
+How to make CSS buttons the same size:
+https://www.sitepoint.com/community/t/how-to-make-css-buttons-the-same-size/2720
+
