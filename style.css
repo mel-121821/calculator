@@ -18,11 +18,11 @@ body {
 .calculator-body {
     margin-top: 80px;
     border: 2px solid grey;
-    padding: 3px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     background-color: rgb(233, 233, 233);
-    border-radius: 8px;
+    border-radius: 16px;
     align-items: stretch;
 }
 
@@ -41,18 +41,18 @@ body {
     display: flex;
     flex: 1 1 auto;
     justify-content: end;
-    min-height: 50px;
-    /* flex auto tells the items to default to their given height, in this case, the given height is the hight of the display (90px) which is split evenly between the 2 items*/
+    min-height: 55px;
+    /* flex auto tells the items to default to their given height, in this case, the given height is the height of the display (90px) which is split evenly between the 2 items*/
 }
 
 p {
     margin: 12px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 #clear,
 #backspace {
-    margin: 7px 20px;
+    margin: 9px 20px;
     background-color: rgb(197, 130, 209);
 }
 
@@ -64,11 +64,19 @@ p {
     justify-content: space-around;
 }
 
+.num,
+.operator,
+#equals,
+#decimal {
+    width: 3.1em;
+}
+
 button {
     padding: 12px 25px;
+    
     margin: 7px;
     background-color:rgb(239, 161, 255);
-    font-size: 20px;
+    font-size: 23px;
     border-radius: 8px;
 }
 
