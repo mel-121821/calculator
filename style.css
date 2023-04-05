@@ -80,10 +80,6 @@ p {
     width: 3.1em;
 }
 
-#equals {
-    
-}
-
 button {
     padding: 12px 25px;
     margin: 7px;
@@ -98,6 +94,7 @@ button {
 #multiply,
 #divide {
     background-color:rgb(28, 34, 68);
+    border: 2px solid black;
 }
 
 #subtract,
