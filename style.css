@@ -18,7 +18,7 @@ body {
 .calculator-body {
     margin-top: 80px;
     border: 2px solid rgb(63, 63, 63);
-    padding: 5px;
+    padding: 10px 5px 5px 5px;
     display: flex;
     flex-direction: column;
     background-color: rgb(177, 179, 189);
@@ -83,7 +83,7 @@ button {
     background-color:rgb(102, 102, 102);
     font-size: 23px;
     border-radius: 8px;
-    border: 2px solid rgb(63, 63, 63);
+    border: 2px solid rgb(37, 37, 37);
     cursor: pointer;
 }
 
