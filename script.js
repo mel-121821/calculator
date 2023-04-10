@@ -153,13 +153,13 @@ function divide (a, b) {
 
 function operate (operator, a, b) {
     if (operator === "+" ) {
-        return Math.round((add(a, b)) * 100) / 100;
+        return Math.round((add(a, b)) * 1000) / 1000;
     } if (operator === "-" ) {
-        return Math.round((subtract(a, b)) * 100) / 100;
+        return Math.round((subtract(a, b)) * 1000) / 1000;
     } if (operator === "x" ) {
-        return Math.round((multiply(a, b)) * 100) / 100;
+        return Math.round((multiply(a, b)) * 1000) / 1000;
     } if (operator === "÷" ) {
-        return Math.round((divide(a, b)) * 100) / 100;
+        return Math.round((divide(a, b)) * 1000) / 1000;
     }
 };
 
